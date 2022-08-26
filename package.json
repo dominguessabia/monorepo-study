@@ -1,0 +1,28 @@
+{
+  "name": "monorepo-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "./packages/@core",
+    "./packages/nestjs"
+  ],
+  "scripts": {
+    "prestart:dev": "npm run build -w @ms/calc-app",
+    "start:dev": "npm run build:w -w @ms/calc-app & npm run start:dev -w nestjs",
+    "test": "jest",
+    "test:@core": "npm run test -- --projects src/@core",
+    "test:nestjs": "npm run test -- --projects src/nestjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeandroSousaCastro/pock-monorepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeandroSousaCastro/pock-monorepo/issues"
+  },
+  "homepage": "https://github.com/LeandroSousaCastro/pock-monorepo#readme"
+}

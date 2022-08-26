@@ -1,0 +1,28 @@
+GET http://localhost:3000/calculator HTTP/1.1
+
+###
+GET http://localhost:3000/calculator/{id} HTTP/1.1
+
+###
+POST http://localhost:3000/calculator HTTP/1.1
+content-type: application/json
+
+{
+    "expression": "1 + 1"
+}
+
+###
+POST http://localhost:3000/calculator HTTP/1.1
+content-type: application/json
+
+{
+    "expression": "6 / 2"
+}
+
+### Passando um dado inválido
+POST http://localhost:3000/calculator HTTP/1.1
+content-type: application/json
+
+{
+    "expression": null
+}
